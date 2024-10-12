@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Ignorar el archivo ejecutable 'main'
+main
+
 # Compiled Object files
 *.slo
 *.lo
