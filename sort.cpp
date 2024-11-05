@@ -39,7 +39,10 @@ void Print(int arr[], int tamaño) {
 }
 
 void SortDemo(){
-    int v[10] = {5,2,10,70,45, 8, 9, 7, 15, 23};
-    QuickSort(v, 0, 10);
-    Print(v, 10);
+    int v_0[10] = {5,2,10,70,45, 8, 9, 7, 15, 23};
+    int v_1[4] = {5,2,10,70};
+    QuickSort(v_0, 0, 9);
+    Print(v_0, 10);
+    QuickSort(v_1, 0, 3);
+    Print(v_1, 4);
 }
