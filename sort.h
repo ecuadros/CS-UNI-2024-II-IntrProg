@@ -4,20 +4,26 @@
 #include <algorithm>    // std::swap
 using namespace std;
 
-// Función para partition el arreglo
+// Función para particion el arreglo
 template <typename T>
 size_t partition(T arr[], size_t low, size_t high) {
-    T pivote = arr[high]; // Elegimos el último elemento como pivote
-    size_t i = low - 1; // Índice del elemento más pequeño
-
-    for (size_t j = low; j < high; j++) {
-        if ( arr[j] >= pivote ) {
+    T pivote = arr[(high+low)/2]; // Elegimos el elemento medio como pivote
+    size_t i=low,j =high;
+    while (i < j){
+        // Se avanza el ínidce i mientras que el valor cumpla la comparación con el pivote
+        while (arr[i]>pivote){
             i++;
-            swap(arr[i], arr[j]); // Intercambiar
+        }
+        // Se retrocede el ínidce j mientras que el valor cumpla la comparación con el pivote
+        while (pivote > arr[j]){
+            j--;
+        }
+        // si i está aún antes de j, se intercambian los valores
+        if (i < j){
+            swap(arr[i],arr[j]);
         }
     }
-    swap(arr[i + 1], arr[high]); // Colocar el pivote en la posición correcta
-    return i + 1; // Retornar el índice del pivote
+    return i; // Retornar el índice del pivote
 }
 
 // Función recursiva para aplicar QuickSort
