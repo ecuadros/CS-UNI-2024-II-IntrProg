@@ -5,10 +5,10 @@
 using namespace std;
 
 template <typename T>
-int partition(T arr[], int low, int high) {
+int partition(T arr[], size_t low, size_t high) {
     T pivot = arr[low]; // Pivote como el primer elemento
-    int i = low + 1;
-    int j = high;
+    auto i = low + 1;
+    auto j = high;
 
     while (true) {
         // Por la izq deben estar los menores 
@@ -25,17 +25,17 @@ int partition(T arr[], int low, int high) {
 }
 
 template <typename T>
-void QuickSort(T arr[], int low, int high) {
+void QuickSort(T arr[], size_t low, size_t high) {
     if (low < high) {
-        int pi = partition(arr, low, high);
+        auto pi = partition(arr, low, high);
         QuickSort(arr, low, pi -1);
         QuickSort(arr, pi + 1, high);
     }
 }
 
 template <typename T>
-void Print(ostream &os, T arr[], int size) {
-    for (int i = 0; i < size; i++) {
+void Print(ostream &os, T arr[], size_t size) {
+    for (auto i = 0; i < size; i++) {
         os << arr[i] << " ";
     }
     os << endl;
