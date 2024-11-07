@@ -1,9 +1,15 @@
 #ifndef __QUICK_SORT_H__
 #define __QUICK_SORT_H__
 #include <iostream>
-#include <algorithm>    // std::swap
+#include <algorithm>    // swap
 #include <cstddef>      // size_t
 using namespace std;
+
+// Función de comparación para decidir si se ordenará de manera ascendente o descendente
+template <typename T>
+bool compare(T a, T b) {
+    return a > b;  // "<": Ascendente -- ">": Descendente
+}
 
 template <typename T>
 size_t partition(T arr[], size_t low, size_t high) {
@@ -13,9 +19,9 @@ size_t partition(T arr[], size_t low, size_t high) {
 
     while (true) {
         // Por la izquierda deben estar los menores
-        while (i <= j && arr[i] < pivot)   i++;
+        while (i <= j && compare(arr[i], pivot))   i++;
         // Por la derecha deben estar los mayores
-        while (i <= j && arr[j] > pivot)    j--;
+        while (i <= j && !compare(arr[j], pivot))  j--;
         // Se cruzaron los índices, salir del bucle
         if (i > j)  break; 
         swap(arr[i], arr[j]);  // Intercambiar elementos
