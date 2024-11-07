@@ -5,16 +5,28 @@
 using namespace std;
 
 template <typename T>
-int partition(T arr[], size_t low, size_t high) {
+bool men(T a, T b)
+{
+   return a>b;
+}
+
+template <typename T>
+bool may(T a, T b)
+{
+   return a<b;
+}
+
+template <typename T>
+int partition(T arr[], int low, int high, bool (*pfc)(T, T)) {
     auto pivot = arr[low]; // Pivote como el primer elemento
     auto i = low + 1;
     auto j = high;
 
     while (true) {
         // Por la izq deben estar los menores 
-        while (i <= j && arr[i] <= pivot)   i++;
+        while (i <= j && !(*pfc)(arr[i], pivot))   i++;
         // Por la der deben estar los mayores
-        while (i <= j && arr[j] > pivot)    j--;
+        while (i <= j && (*pfc)(arr[j], pivot))    j--;
         // Se cruzaron los índices, salir del bucle
         if (i > j)  break; 
         std::swap(arr[i], arr[j]);  // Intercambiar elementos
@@ -27,7 +39,7 @@ int partition(T arr[], size_t low, size_t high) {
 template <typename T>
 void QuickSort(T arr[], int low, int high) {
     if (low < high) {
-        auto pi = partition(arr, low, high);
+        auto pi = partition(arr, low, high, &may);
         QuickSort(arr, low, pi -1);
         QuickSort(arr, pi + 1, high);
     }
