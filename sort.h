@@ -6,7 +6,7 @@ using namespace std;
 
 template <typename T>
 int partition(T arr[], size_t low, size_t high) {
-    T pivot = arr[low]; // Pivote como el primer elemento
+    auto pivot = arr[low]; // Pivote como el primer elemento
     auto i = low + 1;
     auto j = high;
 
@@ -25,7 +25,7 @@ int partition(T arr[], size_t low, size_t high) {
 }
 
 template <typename T>
-void QuickSort(T arr[], size_t low, size_t high) {
+void QuickSort(T arr[], int low, int high) {
     if (low < high) {
         auto pi = partition(arr, low, high);
         QuickSort(arr, low, pi -1);
