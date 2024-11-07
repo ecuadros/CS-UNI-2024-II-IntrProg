@@ -1,7 +1,7 @@
 #include "sort.h"
 
 void SortDemo(){
-    int v[10] = {5,2,10,70,45, 8, 9, 7, 15, 23};
+    size_t v[10] = {5,2,10,70,45, 8, 9, 7, 15, 23};
     QuickSort(v, 0, 9);
     Print(cout, v, 10);
 
