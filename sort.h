@@ -29,7 +29,7 @@ int partition(T arr[], int low, int high, bool ascending = true) { // uso de un 
 }
 
 template <typename T>
-void QuickSort(T arr[], int low, int high, bool ascending = true) {
+void QuickSort(T arr[], int low, int high, bool ascending = true) { // Se inicializa el bool a convenienciia en QuickSort
     if (low < high) {
         int pi = partition(arr, low, high, ascending);
         QuickSort(arr, low, pi -1, ascending);
