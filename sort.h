@@ -37,11 +37,11 @@ int partition(T arr[], int low, int high, bool (*pfc)(T, T)) {
 }
 
 template <typename T>
-void QuickSort(T arr[], int low, int high) {
+void QuickSort(T arr[], int low, int high, bool (*pfc)(T, T)) {
     if (low < high) {
-        auto pi = partition(arr, low, high, &may);
-        QuickSort(arr, low, pi -1);
-        QuickSort(arr, pi + 1, high);
+        auto pi = partition(arr, low, high, pfc);
+        QuickSort(arr, low, pi -1, pfc);
+        QuickSort(arr, pi + 1, high, pfc);
     }
 }
 
