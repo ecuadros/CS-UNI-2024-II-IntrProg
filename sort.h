@@ -6,12 +6,13 @@ using namespace std;
 
 // Función para partition el arreglo
 template <typename T>
-size_t partition(T arr[], size_t low, size_t high) {
+size_t partition(T arr[], size_t low, size_t high, bool ascendente) {
     T pivote = arr[high]; // Elegimos el último elemento como pivote
     size_t i = low - 1; // Índice del elemento más pequeño
 
     for (size_t j = low; j < high; j++) {
-        if ( arr[j] >= pivote ) {
+        bool condicion = ascendente ? (arr[j] <= pivote) : (arr[j] >= pivote);
+        if (condicion) {
             i++;
             swap(arr[i], arr[j]); // Intercambiar
         }
