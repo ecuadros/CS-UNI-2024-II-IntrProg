@@ -5,14 +5,26 @@
 #include <cstddef>      // size_t
 using namespace std;
 
+/*
 // Función de comparación para decidir si se ordenará de manera ascendente o descendente
 template <typename T>
 bool compare(T a, T b) {
     return a > b;  // "<": Ascendente -- ">": Descendente
 }
+*/
 
 template <typename T>
-size_t partition(T arr[], size_t low, size_t high) {
+bool ascendente(T a, T b) {
+    return a < b;
+}
+
+template <typename T>
+bool descendete(T a, T b) {
+    return a > b;
+}
+
+template <typename T, typename comparador>
+size_t partition(T arr[], size_t low, size_t high, comparador compare) {
     T pivot = arr[low]; // Pivote como el primer elemento
     size_t i = low + 1;
     size_t j = high;
@@ -31,13 +43,13 @@ size_t partition(T arr[], size_t low, size_t high) {
     return j; // Retornar la posición del pivote
 }
 
-template <typename T>
-void QuickSort(T arr[], size_t low, size_t high) {
+template <typename T, typename comparador>
+void QuickSort(T arr[], size_t low, size_t high, comparador compare) {
     if (low < high) {
-        size_t pi = partition(arr, low, high);
+        size_t pi = partition(arr, low, high, compare);
         // Llamadas recursivas
-        if (pi > 0) QuickSort(arr, low, pi - 1);  // Verifica que pi > 0 para evitar underflow
-        QuickSort(arr, pi + 1, high);
+        if (pi > 0) QuickSort(arr, low, pi - 1, compare);  // Verifica que pi > 0 para evitar underflow
+        QuickSort(arr, pi + 1, high, compare);
     }
 }
 
