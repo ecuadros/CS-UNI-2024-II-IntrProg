@@ -25,4 +25,11 @@ ostream &operator<<(ostream &os, Alu &a)
     return os;   
 }
 
+struct MyComp
+{
+    auto operator()(Alu &a, Alu &b) {
+        return a.mm < b.mm || (a.mm == b.mm && a.dd < b.dd);
+    }
+};
+
 #endif
