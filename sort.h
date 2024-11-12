@@ -1,35 +1,32 @@
 #ifndef __QUICK_SORT_H__
 #define __QUICK_SORT_H__
 #include <iostream>
-#include <algorithm>    // std::swap
+#include <algorithm> 
 using namespace std;
 
 template <typename T>
-int partition(T arr[], int low, int high) {
-    T pivot = arr[low]; // Pivote como el primer elemento
+int partition(T arr[], int low, int high, bool (*compare)(T, T, bool), bool ascending) {
+    T pivot = arr[low];
     int i = low + 1;
     int j = high;
 
     while (true) {
-        // Por la izq deben estar los menores 
-        while (i <= j && arr[i] <= pivot)   i++;
-        // Por la der deben estar los mayores
-        while (i <= j && arr[j] > pivot)    j--;
-        // Se cruzaron los índices, salir del bucle
-        if (i > j)  break; 
-        std::swap(arr[i], arr[j]);  // Intercambiar elementos
-        i++;    j--;
+        while (i <= j && compare(arr[i], pivot, ascending)) i++;
+        while (i <= j && !compare(arr[j], pivot, ascending)) j--;
+        if (i > j) break;
+        swap(arr[i], arr[j]);
+        i++; j--;
     }
-    std::swap(arr[low], arr[j]);    // Colocar el pivote en su lugar
-    return j; // Retornar la posición del pivote
+    swap(arr[low], arr[j]);
+    return j;
 }
 
 template <typename T>
-void QuickSort(T arr[], int low, int high) {
+void QuickSort(T arr[], int low, int high, bool (*compare)(T, T, bool), bool ascending = true) {
     if (low < high) {
-        int pi = partition(arr, low, high);
-        QuickSort(arr, low, pi -1);
-        QuickSort(arr, pi + 1, high);
+        int pi = partition(arr, low, high, compare, ascending);
+        QuickSort(arr, low, pi - 1, compare, ascending);
+        QuickSort(arr, pi + 1, high, compare, ascending);
     }
 }
 
@@ -41,6 +38,11 @@ void Print(ostream &os, T arr[], int size) {
     os << endl;
 }
 
+template <typename T>
+bool compare(T a, T b, bool ascending) {
+    return ascending ? a < b : a > b;
+}
+
 void SortDemo();
 
-#endif  // __QUICK_SORT_H__
+#endif
