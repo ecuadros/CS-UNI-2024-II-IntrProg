@@ -13,6 +13,7 @@ bool compare(T a, T b) {
 }
 */
 
+/*
 template <typename T>
 bool ascendente(T a, T b) {
     return a < b;
@@ -22,6 +23,7 @@ template <typename T>
 bool descendete(T a, T b) {
     return a > b;
 }
+*/
 
 template <typename T, typename comparador>
 size_t partition(T arr[], size_t low, size_t high, comparador compare) {
