@@ -14,7 +14,7 @@ int partition(T arr[], int low, int high) {
         // Por la izq deben estar los menores 
         while (i <= j && arr[i] >= pivot)   i++;
         // Por la der deben estar los mayores
-        while (i <= j && arr[j] < pivot)    j--;
+        while (i <= j && arr[j] > pivot)    j--;
         // Se cruzaron los índices, salir del bucle
         if (i > j)  break; 
         std::swap(arr[i], arr[j]);  // Intercambiar elementos
