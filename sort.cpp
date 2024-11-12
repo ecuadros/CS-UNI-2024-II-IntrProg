@@ -40,7 +40,12 @@ void SortDemo(){
     cout << "*******************************\n";
 
     cout << "Ascending Sort by mm/dd:" << endl;
-    QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.mm > b.mm || a.dd > b.dd; });
+    QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.mm > b.mm || a.dd < b.dd; });
     Print(cout, vAlu, 10, "\n");
     cout << "*******************************\n";
+     cout << "descending Sort by mm/dd:" << endl;
+   cout << "Descending Sort by mm/dd:" << endl;
+   QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.mm < b.mm || (a.mm == b.mm && a.dd > b.dd); });
+    Print(cout, vAlu, 10, "\n");
+    
 }
