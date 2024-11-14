@@ -24,10 +24,7 @@ public:
     float more;
 };
 
-ostream &operator<<(ostream &os, Employee &e){
-    os << "Salario: " << e.GetSalary();
-    return os;
-}
+ostream &operator<<(ostream &os, Employee &e);
 
 void ClassDemo();
 
