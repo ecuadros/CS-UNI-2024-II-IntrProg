@@ -24,7 +24,7 @@ void AdvancedSorting(){
 
     array<float, 10> sf{5.3f, 7.2f, 4.8f, 2.1f, 8.7f, 6.2f, 1.5f, 9.9f, 0.7f, 3.14f};
     array<int  , 10>  s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
- 
+    
     auto printY = [&s](string_view const rem)
     {
         for (auto a : s)
