@@ -3,14 +3,17 @@
 
 void SortDemo(){
     int v[10] = {5,2,10,70,45, 8, 9, 7, 15, 23};
-    QuickSort(v, 0, 9, &men<int>);
+    QuickSort(v, 0, 9, [](const int &a, const int &b) { return a > b; });
     Print(cout, v, 10);
-    QuickSort(v, 0, 9, &may<int>);
+    QuickSort(v, 0, 9, [](const int &a, const int &b) { return a < b; });
     Print(cout, v, 10);
 
     float w[10] = {5.3, 2.1, 10.5, 70.4, 45.3, 8.7, 9.2, 1.5, 2.5, 2.3};
-    QuickSort(w, 0, 9, &may<float>);
+    QuickSort(w, 0, 9, [](const float &a, const float &b) { return a > b; });
     Print(cout, w, 10);
+
+    QuickSort(w, 0, 9, [](const float &a, const float &b) { return a < b; });
+    Print(std::cout, w, 10); 
 
     string names[] = {"Anthony", "Caleb", "Raymound", "Elmer", "Brad",
                       "Miguel", "Christian", "Gabriel", "Ernesto", "Ana"};
@@ -36,6 +39,16 @@ void SortDemo(){
 
     cout << "Descending Sort by day:" << endl;
     QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.dd < b.dd;});
+    Print(cout, vAlu, 10, "\n");
+    cout << "*******************************\n";
+
+    cout << "Ascending Sort by day:" << endl;
+    QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.dd > b.dd;});
+    Print(cout, vAlu, 10, "\n");
+    cout << "*******************************\n";
+
+    cout << "Descending Sort by mm/dd:" << endl;
+    QuickSort(vAlu, 0, 9, [](Alu &a, Alu &b){ return a.mm < b.mm || a.dd < b.dd; });
     Print(cout, vAlu, 10, "\n");
     cout << "*******************************\n";
 
