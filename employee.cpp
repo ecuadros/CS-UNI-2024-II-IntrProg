@@ -49,7 +49,17 @@ void ClassDemo(){
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
     Employee *vEmpl = new Employee[3];
+    vEmpl[0].SetName("Juan");
+    vEmpl[0].SetSalary(1000);
+    vEmpl[1].SetName("Ernesto");
+    vEmpl[1].SetSalary(1200);
+    vEmpl[2].SetName("Maria");
+    vEmpl[2].SetSalary(1500);
 
+    delete pEmp;
+    delete[] vEmpl;  
+    pEmp = nullptr;
+    vEmpl = nullptr;
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
