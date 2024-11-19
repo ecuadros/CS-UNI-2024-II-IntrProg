@@ -58,5 +58,24 @@ void ClassDemo(){
     delete pEmp;
     pEmp = nullptr;
 
+    for(int i=0;i<3;i++){
+        cin.ignore();
+        string name;
+        cout<<"Ingrese nombre del empleado "<<i<<": ";
+        getline(cin,name);
+        vEmpl[i].SetName(name);
+
+        TSal salario;
+        cout<<"Ingrese salario del empleado "<<i<<": ";
+        cin>>salario;
+        vEmpl[i].SetSalary(salario);
+    }
+
+    for(int i=0;i<3;i++){
+        cout<<vEmpl[i].GetName()<<": "<<vEmpl[i].GetSalary()<<endl;
+    }
+
+    delete[] vEmpl;
+
     
 } // a1, a2, a3 estan saliendo de las {} donde fueron creados
