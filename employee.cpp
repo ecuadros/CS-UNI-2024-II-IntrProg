@@ -47,9 +47,11 @@ void ClassDemo(){
              a3(a2);
     a3.SetSalary(1500);
     cout << "------------------------\n";
-    Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
-
+           Employee *pEmp = new Employee[3]{
+        Employee("Juan", 400),
+        Employee("Pedro", 200),
+        Employee("Ana", 300)
+    };
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
