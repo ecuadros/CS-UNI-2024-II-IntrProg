@@ -48,8 +48,16 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
-
+    Employee *vEmpl = new Employee[3]{
+        Employee("Juan", 1000),
+        Employee("Ernesto", 1200),
+        Employee("Maria", 1500)
+    };
+    delete pEmp;
+    delete[] vEmpl;  // Liberar el arreglo de empleados
+    pEmp = nullptr;
+    vEmpl = nullptr;
+}
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
