@@ -49,14 +49,28 @@ void ClassDemo(){
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
     Employee *vEmpl = new Employee[3];
+    vEmpl[0] = new Employee("Alex", 1000.0);
+    vEmpl[1] = new Employee("Carlos", 900.0);
+    vEmpl[2] = new Employee("Max", 1300.0)
 
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
          << pEmp << endl;
     cout << "========================\n";
+
+   for (int i = 0; i < 3; ++i) {
+        cout << *vEmpl[i] << endl;
+    }
+        
     delete pEmp;
+        
+    for (int i = 0; i < 3; ++i) {
+        delete vEmpl[i];
+    }
+        
     pEmp = nullptr;
+    vEmp1 = nullptr;
 
     
 } // a1, a2, a3 estan saliendo de las {} donde fueron creados
