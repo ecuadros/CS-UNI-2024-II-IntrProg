@@ -48,14 +48,19 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
+    Employee *vEmpl = new Employee[3]{{"Nemo", 137}, {"Carlos", 73}, {"Maria", 7777}};
 
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
-         << pEmp << endl;
+         << pEmp << endl
+         << vEmpl[0] << endl
+         << vEmpl[1] << endl
+         << vEmpl[2] << endl;
+
     cout << "========================\n";
     delete pEmp;
+    delete[] vEmpl;
     pEmp = nullptr;
 
     

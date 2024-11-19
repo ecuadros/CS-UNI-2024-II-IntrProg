@@ -46,6 +46,8 @@ public:
 ostream &operator<<(ostream &os, Employee &e);
 ostream &operator<<(ostream &os, Employee *pE);
 
+void delArrEmp(Employee *);
+
 void ClassDemo();
 
 #endif // __EMPLOYEE_H__
