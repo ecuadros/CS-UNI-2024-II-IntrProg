@@ -7,17 +7,14 @@ Employee::Employee(string name, TSal salary)
     m_test = 20;
     cout << "Construyendo " << m_name << " salario: " << m_salary << endl;
 }
-
+//Constructor de copia corregido
 Employee::Employee(Employee &other)
-        : Employee(other.GetName(), other.GetSalary())
+        : m_name(other.GetName()), m_salary(other.GetSalary())  // Cambio: uso directo de los getters
 {
+    cout << "Copia de " << other.GetName() << endl;
 }
 
-// Employee::Employee(Employee &other){
-//     m_name   = other.GetName();
-//     m_salary = other.GetSalary();
-// }
-
+// Destructor
 Employee::~Employee(){
     cout << "Destruyendo: " << GetName() << " salario: " << GetSalary() << endl;
 }
