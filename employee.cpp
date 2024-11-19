@@ -27,8 +27,12 @@ void Employee::SetSalary(double _salary){
 }
 
 ostream &operator<<(ostream &os, Employee &e){
-    os << "Name: " << e.GetName() << " Salario: " << e.GetSalary();
+    os << "NameY: " << e.GetName() << " SalarioY: " << e.GetSalary();
     return os;
+}
+
+ostream &operator<<(ostream &os, Employee *pE){
+    return os << *pE;
 }
 
 void ClassDemo(){
@@ -44,11 +48,15 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
+    Employee *vEmpl = new Employee[3];
 
     cout << a1 << endl
          << a2 << endl
-         << a3 << endl;
+         << a3 << endl
+         << pEmp << endl;
     cout << "========================\n";
     delete pEmp;
     pEmp = nullptr;
+
+    
 } // a1, a2, a3 estan saliendo de las {} donde fueron creados

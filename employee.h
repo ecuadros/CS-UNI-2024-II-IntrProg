@@ -44,6 +44,7 @@ public:
 };
 
 ostream &operator<<(ostream &os, Employee &e);
+ostream &operator<<(ostream &os, Employee *pE);
 
 void ClassDemo();
 
