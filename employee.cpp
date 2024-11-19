@@ -48,7 +48,7 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
+    Employee *vEmpl = new Employee[3]{Employee ("alfa",20),Employee ("beta",30),Employee ("gamma",50)};
 
     cout << a1 << endl
          << a2 << endl
