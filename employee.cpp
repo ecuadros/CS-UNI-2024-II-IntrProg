@@ -48,7 +48,11 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
+    Employee *vEmpl = new Employee[3]{
+            Employee("Cristhyan", 1000),
+            Employee("Juan", 1200),
+            Employee("Carlos", 1500)
+    };
 
     cout << a1 << endl
          << a2 << endl
@@ -58,5 +62,7 @@ void ClassDemo(){
     delete pEmp;
     pEmp = nullptr;
 
-    
+    delete[] vEmpl;
+    pEmp = nullptr;
+
 } // a1, a2, a3 estan saliendo de las {} donde fueron creados
