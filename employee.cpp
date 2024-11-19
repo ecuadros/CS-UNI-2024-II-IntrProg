@@ -50,13 +50,25 @@ void ClassDemo(){
     Employee *pEmp = new Employee("Caleb", 700);
     Employee *vEmpl = new Employee[3];
 
+    vEmpl[0] = Employee("Pedro", 1005);
+    vEmpl[1] = Employee("Juan", 1400); 
+    vEmpl[2] = Employee("Mary", 1200);
+
     cout << a1 << endl
          << a2 << endl
          << a3 << endl
          << pEmp << endl;
+
+    for (int i = 0; i < 3; i++) {
+        cout << vEmpl[i] << endl; 
+    }
+
     cout << "========================\n";
     delete pEmp;
     pEmp = nullptr;
+
+    delete[] vEmpl;
+    vEmpl = nullptr;
 
     
 } // a1, a2, a3 estan saliendo de las {} donde fueron creados
