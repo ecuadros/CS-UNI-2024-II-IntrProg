@@ -11,6 +11,7 @@
 using namespace std;
 
 // g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp -o main
+// Con cl.exe : cl main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp /Fe:programa.exe
 
 int main(){
     cout << "Hello Introd Programacion CS-UNI\n";
