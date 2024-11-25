@@ -37,4 +37,10 @@ int main(){
         fy(*pf[i]);
     } */
 
+   for (auto i = 0; i < 3; i++)
+   {
+        delete pf[i];
+   }
+   
+
 }
