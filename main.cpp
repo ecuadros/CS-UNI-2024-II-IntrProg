@@ -13,7 +13,7 @@
 #include "point.h"
 using namespace std;
 
-// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp -o main
+// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp rectangle.cpp circle.cpp point.cpp funcion.cpp figure.cpp -o main
 
 void px (Figure *p)
 {
