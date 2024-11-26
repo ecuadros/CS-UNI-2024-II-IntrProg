@@ -6,4 +6,5 @@ class Rectangle: publicFigure
 {public:
   virtual void draw();
 };
+void draw() // Referenciado por "::draw()" en rectangle.cpp
 #endif
