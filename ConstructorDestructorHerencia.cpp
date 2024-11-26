@@ -7,22 +7,23 @@ using namespace std;
 #include "design/point.h"
 
 void ConstructorDestructorHerenciaDemo(){
-    Figure *vFig[3] = {new Rectangle, 
+    const int N = 3;
+    Figure *vFig[N] = {new Rectangle, 
                        new Circle, 
                        new Point("Point 8")};
     cout << "Final de los 3 objetos construidos ...\n\n";
 
-    for (auto i = 0; i < 3; i++)
+    for (auto i = 0; i < N; i++)
         vFig[i]->draw();
     cout << "Draw llamado por polimorfismo ok ...\n\n";
-    for (auto i = 0; i < 3; i++)
+    for (auto i = 0; i < N; i++)
         px(vFig[i]);
     cout << "Draw llamado desde una funcion que recibe un Figure * ...\n\n";
-    for (auto i = 0; i < 3; i++)
+    for (auto i = 0; i < N; i++)
         px(*vFig[i]);
     cout << "Draw llamado desde una funcion que recibe un Figure & ...\n\n";
     
-    for (auto i = 0; i < 3; i++){
+    for (auto i = 0; i < N; i++){
         delete vFig[i];
         vFig[i] = nullptr;
     }
