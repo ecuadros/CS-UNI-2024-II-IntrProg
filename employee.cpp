@@ -79,7 +79,13 @@ void ClassDemo(){
          << a3 << endl
          << pEmp << endl;
     cout << "========================\n";
+<<<<<<< HEAD
     delete pEmp;  // Caleb
+=======
+    delete pEmp;
+    delete[] vEmpl;
+
+>>>>>>> 08a2f8edc8fc396dfb3e3ab403a2af15e5f7ff49
     pEmp = nullptr;
 
 
