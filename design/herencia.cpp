@@ -9,13 +9,13 @@ void px(Figure *p)
 {
     p->draw();
 }
-void py(Figure &rObj)
+void px(Figure &rObj)
 {
     rObj.draw();
 }
 
 void HerenciaDemo(){
-Figure *pf[3]={new Rectangle, new Circle, new Point};
+Figure *pf[3]={new Rectangle, new Circle, new Point("Punto 5")};
 
     for(int i=0; i<3; i++){
         pf[i]->draw();
@@ -28,6 +28,6 @@ Figure *pf[3]={new Rectangle, new Circle, new Point};
         pf[i] = nullptr;
     }
 
-    // px(pf[1]);
-    // py(*pf[1]);
+    px(pf[1]);
+    px(*pf[1]);
 }
