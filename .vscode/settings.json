@@ -29,6 +29,7 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "functional": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "new": "cpp"
     }
 }
