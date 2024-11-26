@@ -5,5 +5,5 @@ using namespace std;
 
 void draw()
 {
-    cout << "draw de la funcion" << endl;
+    cout << "draw externo" << endl;
 }
