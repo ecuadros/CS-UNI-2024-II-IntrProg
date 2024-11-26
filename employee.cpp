@@ -48,7 +48,17 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee *pEmp = new Employee("Caleb", 700);
-    Employee *vEmpl = new Employee[3];
+    Employee *vEmpl = new Employee[3]
+    {
+    Employee("Anthony", 1500),
+    Employee("Miguel", 1700),
+    Employee("Jose", 1800)
+    };
+
+    for (int i = 0; i < 3; ++i) 
+    {
+    cout << vEmpl[i] << endl;
+    }
 
     cout << a1 << endl
          << a2 << endl
@@ -56,6 +66,8 @@ void ClassDemo(){
          << pEmp << endl;
     cout << "========================\n";
     delete pEmp;
+    delete[] vEmpl;
+
     pEmp = nullptr;
 
     
