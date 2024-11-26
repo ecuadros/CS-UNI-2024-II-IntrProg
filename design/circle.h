@@ -5,7 +5,8 @@
 
 class Circle : public Figure
 {
-    public:
+public:
+    // TODO: crear el constructor del Circle
     virtual void draw();
 };
 

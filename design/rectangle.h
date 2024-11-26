@@ -5,7 +5,8 @@
 
 class Rectangle : public Figure
 {
-    public:
+public:
+    // TODO: crear el constructor del Rectangle
     virtual void draw();
 };
 
