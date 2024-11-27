@@ -2,8 +2,19 @@
 #include "circle.h"
 
 using namespace std;
-void Circle::draw()
+
+Circle::Circle(string _name)
+      : Figure(_name)
 {
+    cout << "Figure: " << GetName() << " Contruido ..." << endl;
+}
+
+Circle::~Circle()
+{
+    cout  << "Circle: " << GetName() << " Destruido ..." << endl;
+}
+
+void Circle::draw(){
     Figure::draw();
-    cout << "Circle draw" <<endl;
+    cout << "Circle draw" << endl;
 }

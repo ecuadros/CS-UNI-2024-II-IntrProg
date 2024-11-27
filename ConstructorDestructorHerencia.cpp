@@ -8,8 +8,8 @@ using namespace std;
 
 void ConstructorDestructorHerenciaDemo(){
     const int N = 3;
-    Figure *vFig[N] = {new Rectangle, 
-                       new Circle, 
+    Figure *vFig[N] = {new Rectangle("Rectangulo 2"), 
+                       new Circle("Circle 5"), 
                        new Point("Point 8")};
     cout << "Final de los 3 objetos construidos ...\n\n";
 
@@ -33,8 +33,8 @@ void ConstructorDestructorHerenciaDemo(){
 void MemoryAllocatedObjectsDemo(){
     // Crear objetos en una memoria que ya existe
     void* pMem = new char[sizeof(Rectangle)+sizeof(Circle)+sizeof(Point)];
-    Rectangle *pRect   = new (pMem) Rectangle();
-    Circle    *pCircle = new ((char *)pMem + sizeof(Rectangle)) Circle();
+    Rectangle *pRect   = new (pMem) Rectangle("Rectangulo 3");
+    Circle    *pCircle = new ((char *)pMem + sizeof(Rectangle)) Circle("Circle 9");
     Point     *pPoint  = new ((char *)pMem + sizeof(Rectangle)+sizeof(Circle)) Point("Point 50");
     Figure *pvFig[3] = {pRect, pCircle, pPoint};
     for (auto i = 0; i < 3; i++)
