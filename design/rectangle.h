@@ -6,6 +6,8 @@
 class Rectangle : public Figure
 {
     public:
+             Rectangle(string _name);
+    virtual ~Rectangle();
     virtual void draw();
 };
 

@@ -8,8 +8,8 @@ using namespace std;
 
 void ConstructorDestructorHerenciaDemo(){
     const int N = 3;
-    Figure *vFig[N] = {new Rectangle, 
-                       new Circle, 
+    Figure *vFig[N] = {new Rectangle("Point 6"), 
+                       new Circle ("Point 7"), 
                        new Point("Point 8")};
     cout << "Final de los 3 objetos construidos ...\n\n";
 

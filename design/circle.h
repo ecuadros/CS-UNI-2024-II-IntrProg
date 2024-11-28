@@ -6,6 +6,8 @@
 class Circle : public Figure
 {
     public:
+             Circle(string _name);
+    virtual ~Circle();
     virtual void draw();
 };
 
