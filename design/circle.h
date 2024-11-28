@@ -3,10 +3,10 @@
 
 #include "figure.h"
 
-class Circle : public Figure
-{
+class Circle : public Figure{
 public:
-    // TODO: crear el constructor del Circle
+             Circle(string _name);
+    virtual ~Circle();
     virtual void draw();
 };
 
