@@ -12,9 +12,9 @@ void ClassDemo() {
   
     Employee *pEmp = new Employee("Caleb", 700);
     Employee *vEmpl = new Employee[3]{
-        {"John", 800},
-        {"Doe", 600},
-        {"Smith", 950}
+        {"Cristhian", 800},
+        {"Ana", 600},
+        {"Juan", 950}
     };
     cout << "Employee List:" << endl;
   
