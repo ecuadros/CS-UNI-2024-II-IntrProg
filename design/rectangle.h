@@ -6,7 +6,7 @@
 class Rectangle : public Figure
 {
 public:
-    // TODO: crear el constructor del Rectangle
+    Rectangle(const std::string &name = "Rectangle"); // Constructor con inicialización de nombre// TODO: crear el constructor del Rectangle
     virtual void draw();
 };
 
