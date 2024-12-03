@@ -6,6 +6,9 @@
 class Rectangle : public Figure
 {
 public:
+    Rectangle(string _name);
+    virtual ~Rectangle();
+    
     // TODO: crear el constructor del Rectangle
     virtual void draw();
 };

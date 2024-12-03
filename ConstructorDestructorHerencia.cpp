@@ -33,8 +33,8 @@ void ConstructorDestructorHerenciaDemo(){
 void MemoryAllocatedObjectsDemo(){
     // Crear objetos en una memoria que ya existe
     void* pMem = new char[sizeof(Rectangle)+sizeof(Circle)+sizeof(Point)];
-    Rectangle *pRect   = new (pMem) Rectangle();
-    Circle    *pCircle = new ((char *)pMem + sizeof(Rectangle)) Circle();
+    Rectangle *pRect   = new (pMem) Rectangle("Rectangle 17");
+    Circle    *pCircle = new ((char *)pMem + sizeof(Rectangle)) Circle("Circle 11");
     Point     *pPoint  = new ((char *)pMem + sizeof(Rectangle)+sizeof(Circle)) Point("Point 50");
     Figure *pvFig[3] = {pRect, pCircle, pPoint};
     for (auto i = 0; i < 3; i++)

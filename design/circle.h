@@ -9,6 +9,7 @@ public:
     // TODO: crear el constructor del Circle
     Circle(string _name);
     virtual ~Circle();
+    
     virtual void draw();
 };
 

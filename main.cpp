@@ -9,13 +9,14 @@
 #include "employee.h"
 #include "design/herencia.h"
 #include "ConstructorDestructorHerencia.h"
+#include "lists.h"
 
 #include "design/rectangle.h"
 #include "design/circle.h"
 #include "design/point.h"
 using namespace std;
 
-// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp design/herencia.cpp design/figure.cpp design/rectangle.cpp design/circle.cpp design/point.cpp design/funcion.cpp ConstructorDestructorHerencia.cpp -o main
+// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp design/herencia.cpp design/figure.cpp design/rectangle.cpp design/circle.cpp design/point.cpp design/funcion.cpp ConstructorDestructorHerencia.cpp lists.cpp -o main
 
 int main(){
     cout << "Hello Introd Programacion CS-UNI\n";
@@ -30,9 +31,9 @@ int main(){
     // DemoStruct();
     // ClassDemo();
     // HerenciaDemo();
-
-    ConstructorDestructorHerenciaDemo();
+    // ConstructorDestructorHerenciaDemo();
     // MemoryAllocatedObjectsDemo();
 
+    DemoLinkedListSorted();
 	return 0;
 }

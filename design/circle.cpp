@@ -2,6 +2,7 @@
 #include "circle.h"
 
 using namespace std;
+
 Circle::Circle(string _name)
        :Figure(_name)
 {

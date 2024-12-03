@@ -2,6 +2,7 @@
 #include "rectangle.h"
 #include "funcion.h"
 using namespace std;
+
 Rectangle::Rectangle(string _name)
           :Figure(_name)
 {
