@@ -6,7 +6,7 @@
 class Circle : public Figure
 {
 public:
-    // TODO: crear el constructor del Circle
+    Circle(const std::string &name = "Circle");// TODO: crear el constructor del Circle
     virtual void draw();
 };
 
