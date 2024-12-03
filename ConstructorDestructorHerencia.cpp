@@ -23,11 +23,6 @@ void ConstructorDestructorHerenciaDemo(){
         px(*vFig[i]);
     cout << "Draw llamado desde una funcion que recibe un Figure & ...\n\n";
     
-    for (auto i = 0; i < N; i++){
-        delete vFig[i];
-        vFig[i] = nullptr;
-    }
-    cout << "Destructores terminaron ok ...\n\n";
 }
 
 void MemoryAllocatedObjectsDemo(){
