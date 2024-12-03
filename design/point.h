@@ -5,7 +5,7 @@
 
 class Point : public Figure{
 public:
-             Point(string _name);
+    Point(string _name);
     virtual ~Point();
     virtual void draw();
 };

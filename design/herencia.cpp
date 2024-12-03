@@ -15,7 +15,7 @@ void px(Figure &rObj)
 }
 
 void HerenciaDemo(){
-Figure *pf[3]={new Rectangle, new Circle, new Point("Punto 5")};
+Figure *pf[3]={new Rectangle("Rectangle 5"), new Circle("Circle 5"), new Point("Point 5")};
 
     for(int i=0; i<3; i++){
         pf[i]->draw();
