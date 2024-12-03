@@ -7,14 +7,14 @@ class Figure{
 private:
     string m_name;
 public:
-    Figure(const string &_name= "");
+    Figure(const string &_name= "figura");
     virtual ~Figure();
-
+void SetName(const string _name);
+    string GetName() const;
     virtual void draw();
 
 public:
     void SetName(const string _name);
     string GetName() const;
 };
-
 #endif
