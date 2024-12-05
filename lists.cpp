@@ -27,22 +27,22 @@ void DemoLinkedList(Container &mylist){
     for(T x=0; x<nElem; x++)
        mylist.insert(x);
     
-    foreach(myAscList, [&x](TX &n){ n += x; x++; });
-    foreach(myAscList, ::print<TX>); cout << endl;
+    foreach(mylist, [&x](TX &n){ n += x; x++; });
+    foreach(mylist, ::print<TX>); cout << endl;
     ClassX<TX> ope(5);
-    foreach(myAscList, ope);
-    foreach(myAscList, ::print<TX>); cout << endl;
-    foreach(myAscList, ClassX<TX>(8) );
-    foreach(myAscList, ::print<TX>); cout << endl;
+    foreach(mylist, ope);
+    foreach(mylist, ::print<TX>); cout << endl;
+    foreach(mylist, ClassX<TX>(8) );
+    foreach(mylist, ::print<TX>); cout << endl;
     
     foreach(mylist, ::print<T>);  cout << endl;
 }
 
 void DemoLinkedListSorted(){
     cout << "Ascending list" << endl;
-    LinkedList< LLTraitAsc<TX> > myAscList;
-    DemoLinkedList(myAscList);
-    foreach(myAscList, ::print<TX>); cout << endl;
+    LinkedList< LLTraitAsc<TX> > mylist;
+    DemoLinkedList(mylist);
+    foreach(mylist, ::print<TX>); cout << endl;
 
     cout << "Descending list" << endl;
     LinkedList< LLTraitDesc<TX> > myDescList;
@@ -72,8 +72,8 @@ void demoDoubleLinkedList(Container &mylist)
 void demoDoubleLinkedListSorted()
 {
      cout << "Ascending double list" << endl;
-     DoubleLinkedList< DLLAscTraits<TX> > myAscList;
-     demoDoubleLinkedList(myAscList);
+     DoubleLinkedList< DLLAscTraits<TX> > mylist;
+     demoDoubleLinkedList(mylist);
 
      cout << "Descending double list" << endl;
      DoubleLinkedList< DLLDescTraits<TX> > myDescList;
