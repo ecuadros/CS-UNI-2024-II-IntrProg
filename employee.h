@@ -7,7 +7,7 @@ using namespace std;
 struct X{ 
     int var1;   // public by default
 private:
-    int y;
+    // int y;
 };
 
 using TSal = double;
