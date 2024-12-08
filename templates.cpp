@@ -15,6 +15,6 @@ void DemoVarTemplates(){
            text2 = "C++",
            text3 = "UNI:",
            text4 = "llego Navidad";
-    auto rpta3 = suma(text1, text2, text3);  
+    auto rpta3 = suma(text1, text2, text3, text4);  
     cout << rpta3 << endl;    // Imprime: HolaC++UNI:llego Navidad
 }
