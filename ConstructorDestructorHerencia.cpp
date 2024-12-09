@@ -32,15 +32,16 @@ void ConstructorDestructorHerenciaDemo(){
 
 void MemoryAllocatedObjectsDemo(){
     // Crear objetos en una memoria que ya existe
+    cout << "MemoryAllocatedObjectsDemo ...\n";
     void* pMem = new char[sizeof(Rectangle)+sizeof(Circle)+sizeof(Point)];
     Rectangle *pRect   = new (pMem) Rectangle("Rectangle 17");
     Circle    *pCircle = new ((char *)pMem + sizeof(Rectangle)) Circle("Circle 11");
     Point     *pPoint  = new ((char *)pMem + sizeof(Rectangle)+sizeof(Circle)) Point("Point 50");
-    Figure *pvFig[3] = {pRect, pCircle, pPoint};
+    Figure *pvFig[3]   = {pRect, pCircle, pPoint};
     for (auto i = 0; i < 3; i++)
         px(pvFig[i]);
 
-    (static_cast<Rectangle*>(pvFig[0]))->~Rectangle();       //formas recomendadas por Gemini
+    pRect->~Rectangle();       
     (static_cast<Circle*>(pvFig[1]))->~Circle();
     (static_cast<Point*>(pvFig[2]))->~Point();
 

@@ -10,9 +10,9 @@ auto suma(const T& value) {
 }
 
 
-template<typename T, typename... Args>
+template<typename T, typename ...Args>
 auto suma(const T& value, const Args&... args) {
-    return value + suma(args...);
+    return value + suma(args...); 
 }
 
 void DemoVarTemplates();

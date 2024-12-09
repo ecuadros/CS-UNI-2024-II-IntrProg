@@ -34,6 +34,7 @@ int main(){
     // HerenciaDemo();
     // ConstructorDestructorHerenciaDemo();
     // MemoryAllocatedObjectsDemo();
+    // MemoryAllocatedObjectsDemo();
     // DemoLinkedListSorted();
     DemoVarTemplates();
 	return 0;
