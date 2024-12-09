@@ -23,5 +23,5 @@ void DemoVarTemplates(){
 
     // TODO: Tarea rpta5 implementar esto
     // auto rpta5 = suma(5, text1, 10.3, text2);  
-    // cout << rpta5 << endl;
+    // cout << rpta5 << endl; // Imprime: 5Hola10.3C++
 }
