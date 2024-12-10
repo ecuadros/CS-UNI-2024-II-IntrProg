@@ -175,7 +175,26 @@ class LinkedList
     };
 
 // TO DO add operator<<
+template <typename Traits>
+std::ostream &operator<<(std::ostream &os, const LinkedList<Traits> &lst)
+{
+    typename LinkedList<Traits>::Node *p = lst.m_pHead;
+    while (p)
+    {
+        os << p->getData() << " ";
+        p = p->getpNext();
+    }
+    return os;
+}
 
 // TO DO add operator>>
+template <typename Traits>
+std::istream &operator>>(std::istream &is, LinkedList<Traits> &lst)
+{
+    typename Traits::T value;
+    if (is >> value)
+        lst.insert(value);
+    return is;
+}
 
 #endif
