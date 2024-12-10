@@ -162,11 +162,39 @@ class LinkedList
         }
         throw "hola excepcion"; // Create custom exception pending
     }
-    // TODO add print
-};
+    // TO DO add print
+    void print(std::ostream &os) {
+      Node *p = m_pHead;
+      while (p)
+      {
+          os << p->getData() << " ";
+          p = p->getpNext();
+      }
+      os << std::endl;
+      }
+    };
 
-// TODO add operator<<
+// TO DO add operator<<
+template <typename Traits>
+std::ostream &operator<<(std::ostream &os, const LinkedList<Traits> &lst)
+{
+    typename LinkedList<Traits>::Node *p = lst.m_pHead;
+    while (p)
+    {
+        os << p->getData() << " ";
+        p = p->getpNext();
+    }
+    return os;
+}
 
-// TODO add operator>>
+// TO DO add operator>>
+template <typename Traits>
+std::istream &operator>>(std::istream &is, LinkedList<Traits> &lst)
+{
+    typename Traits::T value;
+    if (is >> value)
+        lst.insert(value);
+    return is;
+}
 
 #endif
