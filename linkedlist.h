@@ -162,11 +162,20 @@ class LinkedList
         }
         throw "hola excepcion"; // Create custom exception pending
     }
-    // TODO add print
-};
+    // TO DO add print
+    void print(std::ostream &os) {
+      Node *p = m_pHead;
+      while (p)
+      {
+          os << p->getData() << " ";
+          p = p->getpNext();
+      }
+      os << std::endl;
+      }
+    };
 
-// TODO add operator<<
+// TO DO add operator<<
 
-// TODO add operator>>
+// TO DO add operator>>
 
 #endif
