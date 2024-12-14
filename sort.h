@@ -6,7 +6,7 @@ using namespace std;
 
 template <typename T>
 int partition(T arr[], int low, int high) {
-    T pivot = arr[low]; // Pivote como el primer elemento
+    T pivot = arr[low + ((high-low)/2)]; // Pivote como el elemento central
     int i = low + 1;
     int j = high;
 
