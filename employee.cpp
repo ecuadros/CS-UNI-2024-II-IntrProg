@@ -49,7 +49,12 @@ void ClassDemo(){
     a3.SetSalary(1500);
     cout << "------------------------\n";
     Employee* pEmp  = new Employee("Caleb", 700);
-    {
+    Employee *vEmpl = new Employee[3]{
+            Employee("Raul", 980),
+            Employee("Pepe", 1111),
+            Employee("Luis", 1600)
+    };  
+     {
         // https://en.cppreference.com/w/cpp/memory/unique_ptr
         unique_ptr<Employee> obj1(new Employee("Ernesto", 900));
         obj1->SetSalary(950);
@@ -84,7 +89,8 @@ void ClassDemo(){
 =======
     delete pEmp;
     delete[] vEmpl;
-
+    delete[] vEmpl;
+    pEmp = nullptr;
 >>>>>>> 08a2f8edc8fc396dfb3e3ab403a2af15e5f7ff49
     pEmp = nullptr;
 
