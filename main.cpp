@@ -17,7 +17,7 @@
 #include "templates.h"
 using namespace std;
 
-// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp design/herencia.cpp design/figure.cpp design/rectangle.cpp design/circle.cpp design/point.cpp design/funcion.cpp ConstructorDestructorHerencia.cpp lists.cpp -o main
+// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp design/herencia.cpp design/figure.cpp design/rectangle.cpp design/circle.cpp design/point.cpp design/funcion.cpp ConstructorDestructorHerencia.cpp lists.cpp templates.cpp -o main
 
 int main(){
     cout << "Hello Introd Programacion CS-UNI\n";
