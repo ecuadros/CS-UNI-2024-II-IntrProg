@@ -1,41 +1,16 @@
-#include <iostream>
-#include "pointers.h"
-#include "sorting.h"
-#include "sort.h"
-#include "files.h"
-#include "vector.h"
-#include "bits.h"
-#include "struct.h"
-#include "employee.h"
-#include "design/herencia.h"
-#include "ConstructorDestructorHerencia.h"
-#include "lists.h"
+#ifndef CELL_H
+#define CELL_H
 
-#include "design/rectangle.h"
-#include "design/circle.h"
-#include "design/point.h"
-#include "templates.h"
-using namespace std;
+#include <string>
 
-// g++ -std=c++17 main.cpp pointers.cpp sorting.cpp sort.cpp files.cpp vector.cpp bits.cpp struct.cpp employee.cpp design/herencia.cpp design/figure.cpp design/rectangle.cpp design/circle.cpp design/point.cpp design/funcion.cpp ConstructorDestructorHerencia.cpp lists.cpp -o main
+class Cell {
+public:
+    std::string content; // Contenido de la celda (texto, número o fórmula)
 
-int main(){
-    cout << "Hello Introd Programacion CS-UNI\n";
-    // Pointers();
-    // Sorting();
-    // SortDemo();
-    // DemoFiles();
-    // VectorDemo();
-    // BitsPlayground();
-    // BitsDemo();
-    // DemoFunctionPointers();
-    // DemoStruct();
-    // ClassDemo();
-    // HerenciaDemo();
-    // ConstructorDestructorHerenciaDemo();
-    // MemoryAllocatedObjectsDemo();
-    // MemoryAllocatedObjectsDemo();
-    // DemoLinkedListSorted();
-    DemoVarTemplates();
-	return 0;
-}
+    Cell(const std::string& value = "");
+
+    bool isNumber() const;    // Verifica si el contenido es un número
+    double evaluate() const;  // Evalúa el contenido si es un número
+};
+
+#endif // CELL_H
