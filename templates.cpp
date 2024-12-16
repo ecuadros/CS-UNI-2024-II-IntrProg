@@ -9,7 +9,7 @@ void DemoVarTemplates(){
     cout << rpta1 << endl;
 
     auto rpta2 = suma(5, d, 3, l, 4.3, i);
-    cout << rpta2 << endl;      // Imprime: 17.8
+    cout << rpta2 << endl;      // Imprime: 17.8 // Me parece que es 22.8
 
     string text1 = "Hola",
            text2 = "C++",
@@ -19,9 +19,8 @@ void DemoVarTemplates(){
     cout << rpta3 << endl;    // Imprime: HolaC++UNI:llego Navidad
 
     auto rpta4 = suma(text3, text2, text1);  
-    cout << rpta4 << endl;    // Imprime: HolaC++UNI:llego Navidad
+    cout << rpta4 << endl;    // Imprime: UNI:C++Hola
 
-    // TODO: Tarea rpta5 implementar esto
-    // auto rpta5 = suma(5, text1, 10.3, text2);  
-    // cout << rpta5 << endl; // Imprime: 5Hola10.3C++
+    auto rpta5 = suma(5, text1, 10.3, text2)
+    cout << rpta5 << endl;    // Imprime: 5Hola10.3C++
 }
