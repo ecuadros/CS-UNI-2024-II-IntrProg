@@ -2,8 +2,7 @@
 #include "circle.h"
 
 using namespace std;
-Circle::Circle(string _name)
-       :Figure(_name)
+Circle::Circle(string _name = "Default Circle") : Figure(_name)
 {
     cout << "Circle: " << GetName() << " Construido ..." << endl;
 }
