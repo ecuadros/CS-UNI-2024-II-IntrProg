@@ -26,11 +26,11 @@ public:
     IteratorBase operator=(IteratorBase &iter)
           {   m_pContainer = move(iter.m_pContainer);
               m_pNode      = move(iter.m_pNode);
-              return *(IteratorBase *)this; // Pending static_cast?
+              return *static_cast<IteratorBase*>(this); // Pending static_cast? //gemini recomienda ser explícitos, static_cast convierte el puntero this(palabra clave-keyword) (que apunta al objeto actual)
           }
 
-    bool operator==(IteratorBase iter)   { return m_pNode == iter.m_pNode; }
-    bool operator!=(IteratorBase iter)   { return !(*this == iter);        }
+    bool operator==(const IteratorBase &iter)   { return m_pNode == iter.m_pNode; }
+    bool operator!=(const IteratorBase &iter)   { return !(*this == iter);        }
     Type &operator*()                    { return m_pNode->getDataRef();   }
 };
 
