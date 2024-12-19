@@ -19,33 +19,35 @@ template <typename T>
 class NodeLinkedList
 {
 public:
-  typedef T         Type;
+  using Type = T;
 private:
-  typedef NodeLinkedList<T> Node;
+  using Node = NodeLinkedList<T>;
   public:
   // TODO change T y KeyNode
-    T       m_data;
+    Type       m_data;
     Node   *m_pNext;//
   public:
-    NodeLinkedList(T data, Node *pNext = nullptr) 
+    NodeLinkedList(Type data, Node *pNext = nullptr) 
         : m_data(data), m_pNext(pNext)
     {};
     // TODO Move to KeyNode
-    T         getData()                {   return m_data;    }
-    T        &getDataRef()             {   return m_data;    }
+    Type         getData()                {   return m_data;    }
+    Type        &getDataRef()             {   return m_data;    }
 
     void      setpNext(NodeLinkedList *pNext)  {   m_pNext = pNext;  }
     Node     *getpNext()               {   return getpNextRef();   }
     Node    *&getpNextRef()            {   return m_pNext;   }
+    virtual ~NodeLinkedList(){}
 };
 
 // TODO remove general_iterator
 template <typename Container>
 class forward_iterator : public general_iterator<Container,  class forward_iterator<Container> > // 
-{public: 
+{
+  public: 
     // TODO: subir al padre  
     typedef class general_iterator<Container, forward_iterator<Container> > Parent; 
-    typedef typename Container::Node                                  Node; // 
+    typedef typename Container::Node                                        Node; // 
     typedef forward_iterator<Container>                                     myself;
 
   public:
@@ -53,10 +55,11 @@ class forward_iterator : public general_iterator<Container,  class forward_itera
     forward_iterator(myself &other)  : Parent (other) {}
     forward_iterator(myself &&other) : Parent(other) {} // Move constructor C++11 en adelante
 
-public:
-    forward_iterator operator++() { Parent::m_pNode = (Node *)Parent::m_pNode->getpNext();  
+  public:
+    forward_iterator operator++() { Parent::m_pNode = static_cast<Node *>(Parent::m_pNode)->getpNext();  // se realiza la conversión con un static_cast (solo por ser más explícitos) 
                                     return *this;
                                   }
+    virtual ~forward_iterator(){} //creo que faltaba un destructor;
 };
 
 template <typename _T>
@@ -163,10 +166,41 @@ class LinkedList
         throw "hola excepcion"; // Create custom exception pending
     }
     // TODO add print
+    void print(ostream &os, string cad = " ")
+    {
+      Node *pNod = m_pHead;
+      while (pNod)
+      {
+          os<<pNod->getData()<<cad;
+          pNod=pNod->getpNext();
+      }
+      os<<endl;
+    }
 };
 
 // TODO add operator<<
+template <typename Traits>
+ostream &operator<<(ostream &os, const LinkedList<Traits> &list)
+{
+    typename LinkedList<Traits>::Node *pNod = list.m_pHead;
+    while (pNod)
+    {
+        os<<pNod->getData();
+        pNod=pNod->getpNext();
+    }
+    return os;
+}
 
 // TODO add operator>>
+template <typename Traits>
+istream &operator>>(istream &is, LinkedList<Traits> &list)
+{
+    typename Traits::T Ndata;
+    if (is>>Ndata)
+    {
+      list.insert(Ndata);
+    }
+    return is;
+}
 
 #endif

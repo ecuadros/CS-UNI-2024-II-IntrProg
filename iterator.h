@@ -32,6 +32,7 @@ public:
     bool operator==(const IteratorBase &iter)   { return m_pNode == iter.m_pNode; }
     bool operator!=(const IteratorBase &iter)   { return !(*this == iter);        }
     Type &operator*()                    { return m_pNode->getDataRef();   }
+    virtual ~general_iterator(){}      //creo que faltaba un destructor para esta clase
 };
 
 #endif

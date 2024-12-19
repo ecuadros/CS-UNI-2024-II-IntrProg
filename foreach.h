@@ -58,10 +58,10 @@ void foreach_reverse(Container &container, F ope){
 
 // TODO implementar el foreach inverso
 // # 2
-// template <typename Container, typename F>
-// void foreach_inverso(Container &container, F ope)
-// { foreach(container.rbegin(), container.rend(), ope);
-// }
+template <typename Container, typename F>
+void foreach_inverso(Container &container, F ope)
+{ foreach(container.rbegin(), container.rend(), ope);   //el propio iterador (iterador inverso) que devuelve .rbegin tiene un operador ++ sobrecargadp diferente al ++ de un iteradr normal, por eso no es necesario una implementación
+}
 
 // template <typename Container>
 // void foreach(Container &container)
