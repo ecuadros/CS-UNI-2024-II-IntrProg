@@ -35,7 +35,7 @@ int main(){
     // ConstructorDestructorHerenciaDemo();
     // MemoryAllocatedObjectsDemo();
     // MemoryAllocatedObjectsDemo();
-    // DemoLinkedListSorted();
-    DemoVarTemplates();
+    DemoLinkedListSorted();
+    //DemoVarTemplates();
 	return 0;
 }

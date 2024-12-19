@@ -27,13 +27,14 @@ void DemoLinkedList(Container &mylist){
        mylist.insert(x);
     // TODO: liberar os siguientes comentarios y hacerlos correr
     // Lambda function
-    // foreach(myAscList, [x](TX &n){ n += x; x++; });
-    // foreach(myAscList, ::print<TX>); cout << endl;
-    // ClassX<TX> ope(5);
-    // foreach(myAscList, ope);
-    // foreach(myAscList, ::print<TX>); cout << endl;
-    // foreach(myAscList, ClassX<TX>(8) );
-    // foreach(myAscList, ::print<TX>); cout << endl;
+    T x=0;
+    foreach(mylist, [&x](TX &n){ n += x; x++; });
+    foreach(mylist, ::print<TX>); cout << endl;
+    ClassX<TX> ope(5);
+    foreach(mylist, ope);
+    foreach(mylist, ::print<TX>); cout << endl;
+    foreach(mylist, ClassX<TX>(8) );
+    foreach(mylist, ::print<TX>); cout << endl;
     
     foreach(mylist, ::print<T>);  cout << endl;
 }
